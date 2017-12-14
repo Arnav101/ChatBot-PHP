@@ -22,7 +22,7 @@ body{
 }
 #converse{
 	width: 300px;
-	height: 400px;
+	height: 0px;
 	margin: 0 auto;
 	border: 1px solid #AAA;
 	background-color: ghostwhite;
@@ -42,12 +42,25 @@ body{
 	font-weight: bold;
 	font-size: 90%;
 }
+#chat-bot{
+	color: #CC00CC;
+	font-weight: bold;
+	font-size: 90%;	
+}
+#chat-head{
+	background-color: #0055FF; 
+	margin: 0;
+	border: 1px solid #AAA;
+	height: 50px;
+	width: 300px;
+}
 #controls{
 	margin: 0;
 	border: 1px solid #AAA;
 	height: 50px;
 	width: 300px;
 	background-color: white;
+	display: none;
 }
 #textbox{
 	width: 250px;
@@ -56,6 +69,7 @@ body{
 	max-height: 48px;
 	border: none;
 	padding: 10px;
+	display: none;
 }
 textarea{
 	resize:none;
