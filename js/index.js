@@ -17,6 +17,7 @@ function ai(conv,message){
 	}
 }
 $(function(){
+	var open = false;
 	var conv = $("#converse").html();
 	get_username(conv);
 	$("#send").click(function(){
@@ -34,10 +35,10 @@ $(function(){
 			ai(conv,usermsg);
 		}
 	});
-	$("#chat-head").click(function(){
-		$("#controls").css({"display":"block"});
-		$("#textbox").css({"display":"block"});
-		$("#converse").animate({"height":"400px"});
-
+	$("#chat-button").click(function(){
+		$("#chat-box").animate({"right":"0px"});	
+	});
+	$("#cancel").click(function(){
+		$("#chat-box").animate({"right":"-300px"});
 	});
 });

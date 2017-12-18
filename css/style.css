@@ -9,33 +9,62 @@ body{
 	height: 60px;
 	background-color: #333;
 	box-shadow: 0px 4px 2px #333;
+	color: white;
 }
-#header>h1{
-	width: 100%;
-	margin: 0;
-	color: ghostwhite;
-	padding-top: 10px;
-	padding-left: 10px;
-}
-#header>h1>span{
-	color: #0099FF;
-}
-#converse{
-	width: 300px;
-	height: 0px;
-	margin: 0 auto;
-	border: 1px solid #AAA;
-	background-color: ghostwhite;
+#header>#chat-button{
+	float: right;
 	padding: 5px;
-	overflow: scroll;
+	cursor: pointer;
 }
 #chat-box{
-	width: 300px;
-	height: 400px;
-	padding: 0;
-	position: absolute;
-	left: 500px;
-	top: 400px;
+	position : fixed;
+	right : -300px;
+	top: 0px;
+	width : 300px;
+	height : 100%;
+	/*border: solid 1px red;*/
+}
+#chat-box>#chat-head{
+	height: 58px;
+	width: inherit;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 10px 0 10px 5px;
+	background-color: #333;
+	color: white;
+	z-index: 99;
+	box-shadow: 0px 4px 2px #333;
+	margin-bottom: 10px;
+}
+#chat-box>#chat-head>i{
+	float: right;
+	color: white;
+	padding:8px 15px 10px 0;
+	cursor: pointer;
+}
+#chat-box>#converse{
+	height: 85%;
+	background-color: white;
+	padding-left: 5px;
+	font-size: 115%
+}
+#chat-box>#controls{
+	margin: 0;
+	border-top: 1px solid #AAA;
+	height: 8%;
+	width: 298px;
+	background-color: white;
+	padding: 10px 0 10px 0;
+}
+#chat-box>#controls>#textbox{
+	width: 83%;
+	font-size: 115%;
+	height: inherit;
+	min-height: 48px;
+	max-height: 48px;
+	border: none;
+	padding: 10px;
+
 }
 #chat-user{
 	color: #0055FF;
@@ -47,41 +76,18 @@ body{
 	font-weight: bold;
 	font-size: 90%;	
 }
-#chat-head{
-	background-color: #0055FF; 
-	margin: 0;
-	border: 1px solid #AAA;
-	height: 50px;
-	width: 300px;
-}
-#controls{
-	margin: 0;
-	border: 1px solid #AAA;
-	height: 50px;
-	width: 300px;
-	background-color: white;
-	display: none;
-}
-#textbox{
-	width: 250px;
-	height: 48px;
-	min-height: 48px;
-	max-height: 48px;
-	border: none;
-	padding: 10px;
-	display: none;
-}
+
 textarea{
 	resize:none;
 }
-#send{
+#chat-box>#controls>#send{
 	background-color: #0055FF;
 	border: none;
 	height :48px;
-	width: 48px;
+	width: 16%;
 	border-radius: 50%;
 }
-#send:focus{
+#chat-box>#controls>#send:focus{
 	outline: none;
 }
 .controls-elements{
@@ -89,4 +95,36 @@ textarea{
 }
 #send-icon{
 	color: white;
+}
+@media all and (max-width: 768px){
+	#chat-box>#converse{
+		height: 80%;
+		background-color: white;
+		padding-left: 5px;
+		font-size: 115%
+	}
+	#chat-box>#controls{
+		margin: 0;
+		border-top: 1px solid #AAA;
+		height: 12%;
+		width: 298px;
+		background-color: white;
+		padding: 10px 0 10px 0;
+	}
+}
+@media all and (max-width: 640px) and (min-width: 768px){
+	#chat-box>#converse{
+		height: 73%;
+		background-color: white;
+		padding-left: 5px;
+		font-size: 115%
+	}
+	#chat-box>#controls{
+		margin: 0;
+		border-top: 1px solid #AAA;
+		height: 25%;
+		width: 298px;
+		background-color: white;
+		padding: 10px 0 10px 0;
+	}
 }
