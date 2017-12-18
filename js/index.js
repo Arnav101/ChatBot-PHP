@@ -3,7 +3,10 @@ function send_message(conv,message){
 	if (conv.length > 4) {
 			conv = conv + "<br>";
 	}
-	$("#converse").html(conv + "<span id='chat-bot'>Mo-Pal: </span>" + message);
+	$("#converse").html(conv +"<span class = 'current-msg'>" + "<span id='chat-bot'>Mo-Pal: </span>" + message + "</span>");
+	$(".current-msg").hide();
+	$(".current-msg").delay(500).fadeIn();
+	$(".current-msg").removeClass("current-msg");
 }
 
 function get_username(conv){
@@ -14,6 +17,13 @@ function ai(conv,message){
 	if (username<4) {
 		username = message;
 		send_message(conv,"Hi, "+ username + ". How are you?");
+	}
+	else{
+		     $.get("getresponse.php",{q:message}, function(data, status){
+		            alert("Data: " + data + "\nStatus: " + status + q);
+		        });
+		    });
+		});
 	}
 }
 $(function(){
