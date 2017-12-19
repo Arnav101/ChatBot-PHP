@@ -19,11 +19,12 @@ function ai(conv,message){
 		send_message(conv,"Hi, "+ username + ". How are you?");
 	}
 	else{
-		     $.get("getresponse.php",{q:message}, function(data, status){
-		            alert("Data: " + data + "\nStatus: " + status + q);
-		        });
+		// $("#send").click(function(){
+		    $.get("getresponse.php", {q:message}, function(data, status){
+		        // alert("Data: " + data + "\nStatus: " + status);
+		        send_message(conv,data);
 		    });
-		});
+		// }); 		 
 	}
 }
 $(function(){
