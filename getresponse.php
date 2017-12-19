@@ -13,13 +13,13 @@
 		$q = strtolower($q);
 		foreach ($responses as $r => $value) {
 			# code...
-			if (strpos($r, $q)) {
+			if (strpos($r, $q) !== false) {
 				# code...
 				$response .= $value;
 			}
 			
 		}
 	}
-	$noresponse = "Sorry I'm still learning. Hence my responses are limited.".$q;
+	$noresponse = "Sorry I'm still learning. Hence my responses are limited.";
 	echo $response === "" ? $noresponse : $response;
 ?>
